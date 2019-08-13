@@ -35,6 +35,8 @@ public class Application implements CommandLineRunner {
 		InputStream input = new FileInputStream(fileName);
 		FileData fileData = fileStorageService.storeFile(input, fileName);
 
+		System.out.println("File stored with ID: " + fileData.getId());
+
 		// Retrieve file
 		InputStream retrivedIn = fileStorageService.getFileContent(fileData.id);
 
