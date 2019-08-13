@@ -1,0 +1,18 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+volumes:
+   mongodata:
+      external: true
+
+services:
+   mongo:
+      image: mongo
+      restart: always
+      ports:
+         - "27017-27019:27017-27019"
+      environment:
+         MONGO_INITDB_ROOT_USERNAME: admin
+         MONGO_INITDB_ROOT_PASSWORD: password
+      volumes:
+         - mongodata:/data/db
