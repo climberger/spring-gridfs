@@ -9,7 +9,7 @@ services:
    mongo:
       image: mongo
       restart: always
-      container_name: mongodb-container
+      container_name: gridfs-mongodb-container
       ports:
          - "27017-27019:27017-27019"
       environment:
